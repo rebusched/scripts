@@ -83,29 +83,15 @@ if player1 != '(no player1)' and player2 != '(no player2)':
 			print "The dice rolled %r and sum is %r" % (dice, activesum)
 				
 			if activesum < 100:
-				while cont != 'y' and cont != 'n':
-					print """
-					<form action="ex45web.py" method="post">
-					Continue? (y/n) <input type="text" name="cont" maxlength="1" size="2">
-					<input type="submit" name="submit" value="Enter" /> 
-					</form>
-					"""
-					
-					form = cgi.FieldStorage()
-					cont = form.getvalue("cont", "(no cont)")
+				print """
+				<form action="ex45web.py" method="post">
+				Continue? (y/n) <input type="text" name="cont" maxlength="1" size="1">
+				<input type="submit" name="submit" value="Enter" /> 
+				</form>
+				"""
 				
-				if cont == '(no cont)':
-					while cont != 'y' and cont != 'n':
-						print """
-						<form action="ex45web.py" method="post">
-						I did not understand that! Don't be a politician, answer yes (y) or no (n)!
-						Continue? (y/n) <input type="text" name="cont" maxlength="1" size="2">
-						<input type="submit" name="submit" value="Enter" /> 
-						</form>
-						"""
-
-						form = cgi.FieldStorage()
-						cont = form.getvalue("cont", "(no cont)")
+				form = cgi.FieldStorage()
+				cont = form.getvalue("cont", "(no cont)")
 			else:
 				cont = 'y'
 				if activeplayer == 1:
@@ -125,9 +111,7 @@ if player1 != '(no player1)' and player2 != '(no player2)':
 				activeplayername = player1
 				activesum = sum1
 			
-			print " "
-			print " "
-			print " "
+			print "<br /><br /><br />"
 			print "## PLAYER %s - YOUR TURN! ##" % (activeplayername)
 	else:
 		"""Game has finished. Print results."""
