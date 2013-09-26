@@ -55,13 +55,13 @@ if player1 != '(no player1)' and player2 != '(no player2)':
 		print " "
 		print " "
 		print "## PLAYER %s - YOU START! ##" % (player1)
-		print " "
+		print "<br />"
 	else:
 		activeplayer = 2
 		print " "
 		print " "
 		print "## PLAYER %s - YOU START! ##" % (player2)
-		print " "
+		print "<br />"
 
 	"""Play game."""
 	while activesum < 100:
@@ -113,6 +113,7 @@ if player1 != '(no player1)' and player2 != '(no player2)':
 			
 			print "<br /><br /><br />"
 			print "## PLAYER %s - YOUR TURN! ##" % (activeplayername)
+			print "<br />"
 	else:
 		"""Game has finished. Print results."""
 		print " "
